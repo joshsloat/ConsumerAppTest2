@@ -19,7 +19,18 @@
 		A48760AE170B108100F037BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48760AD170B108100F037BF /* ViewController.m */; };
 		A48760B1170B108100F037BF /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48760AF170B108100F037BF /* ViewController_iPhone.xib */; };
 		A48760B4170B108100F037BF /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48760B2170B108100F037BF /* ViewController_iPad.xib */; };
+		A48760C1170B111200F037BF /* libStaticLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A48760C0170B10DC00F037BF /* libStaticLibTest.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A48760BF170B10DC00F037BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A48760BB170B10DC00F037BF /* StaticLibTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A407C94C170B0687007E68AC;
+			remoteInfo = StaticLibTest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A4876091170B108100F037BF /* ConsumerAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsumerAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +50,7 @@
 		A48760AD170B108100F037BF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A48760B0170B108100F037BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		A48760B3170B108100F037BF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		A48760BB170B10DC00F037BF /* StaticLibTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StaticLibTest.xcodeproj; path = ../StaticLibTest/StaticLibTest.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48760C1170B111200F037BF /* libStaticLibTest.a in Frameworks */,
 				A4876095170B108100F037BF /* UIKit.framework in Frameworks */,
 				A4876097170B108100F037BF /* Foundation.framework in Frameworks */,
 				A4876099170B108100F037BF /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +71,7 @@
 		A4876088170B108100F037BF = {
 			isa = PBXGroup;
 			children = (
+				A48760BA170B10CD00F037BF /* Libraries */,
 				A487609A170B108100F037BF /* ConsumerAppTest */,
 				A4876093170B108100F037BF /* Frameworks */,
 				A4876092170B108100F037BF /* Products */,
@@ -110,6 +124,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A48760BA170B10CD00F037BF /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A48760BB170B10DC00F037BF /* StaticLibTest.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		A48760BC170B10DC00F037BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A48760C0170B10DC00F037BF /* libStaticLibTest.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,12 +179,28 @@
 			mainGroup = A4876088170B108100F037BF;
 			productRefGroup = A4876092170B108100F037BF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A48760BC170B10DC00F037BF /* Products */;
+					ProjectRef = A48760BB170B10DC00F037BF /* StaticLibTest.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A4876090170B108100F037BF /* ConsumerAppTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A48760C0170B10DC00F037BF /* libStaticLibTest.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libStaticLibTest.a;
+			remoteRef = A48760BF170B10DC00F037BF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A487608F170B108100F037BF /* Resources */ = {
@@ -277,6 +323,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConsumerAppTest/ConsumerAppTest-Prefix.pch";
 				INFOPLIST_FILE = "ConsumerAppTest/ConsumerAppTest-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -288,6 +335,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConsumerAppTest/ConsumerAppTest-Prefix.pch";
 				INFOPLIST_FILE = "ConsumerAppTest/ConsumerAppTest-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
